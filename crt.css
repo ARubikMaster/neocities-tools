@@ -131,7 +131,7 @@
     text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
   }
 }
-.content::after {
+/*.content::after {
   content: " ";
   position: absolute;
   top: 0;
@@ -156,7 +156,7 @@
   z-index: 2;
   background-size: 100% 2px, 3px 100%;
   pointer-events: none;
-}
+}*/
 .content {
   animation: textShadow 1.6s infinite;
 }
