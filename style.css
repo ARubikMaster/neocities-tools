@@ -97,13 +97,6 @@ button:hover {
     color: black;
 }
 
-.content {
-    width: 100vw;
-    display: flex;
-    height: 100vh;
-    flex-direction: row;
-}
-
 .titlebar {
     display: flex;
     flex-direction: row;

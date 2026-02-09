@@ -4,54 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="crt.css">
 </head>
 <body>
-    <!-- Guestbook Script -->
-    <script async src="https://guestbooks.meadow.cafe/resources/js/embed_script/5949/script.js"></script>
-    <!-- Guestbook Form -->
-    <div id="guestbooks___guestbook-form-container">
-      <form id="guestbooks___guestbook-form" 
-            action="https://guestbooks.meadow.cafe/guestbook/5949/submit" 
-            method="post">
-        <div class="info">
-            <div class="guestbooks___input-container">
-              <input type="text" 
-                     id="name" 
-                     name="name" 
-                     placeholder="Your Name" 
-                     required>
+    <div class="content">
+        <!-- Guestbook Script -->
+        <script async src="https://guestbooks.meadow.cafe/resources/js/embed_script/5949/script.js"></script>
+        <!-- Guestbook Form -->
+        <div id="guestbooks___guestbook-form-container">
+          <form id="guestbooks___guestbook-form" 
+                action="https://guestbooks.meadow.cafe/guestbook/5949/submit" 
+                method="post">
+            <div class="info">
+                <div class="guestbooks___input-container">
+                  <input type="text" 
+                         id="name" 
+                         name="name" 
+                         placeholder="Your Name" 
+                         required>
+                </div>
+                <div class="guestbooks___input-container">
+                  <input type="url" 
+                         id="website" 
+                         name="website" 
+                         placeholder="Website (optional)">
+                </div>
             </div>
+            <div id="guestbooks___challenge-answer-container"></div>
+            <br>
             <div class="guestbooks___input-container">
-              <input type="url" 
-                     id="website" 
-                     name="website" 
-                     placeholder="Website (optional)">
+              <textarea id="text" 
+                        name="text" 
+                        placeholder="Leave your message here..." 
+                        rows="4"
+                        style="width: 100%; box-sizing: border-box; resize: vertical;"
+                        required></textarea>
             </div>
+            <button type="submit">Sign Guestbook</button>
+            <div id="guestbooks___error-message"></div>
+          </form>
         </div>
-        <div id="guestbooks___challenge-answer-container"></div>
-        <br>
-        <div class="guestbooks___input-container">
-          <textarea id="text" 
-                    name="text" 
-                    placeholder="Leave your message here..." 
-                    rows="4"
-                    style="width: 100%; box-sizing: border-box; resize: vertical;"
-                    required></textarea>
+        <!-- Attribution (optional but appreciated!) -->
+        <div id="guestbooks___guestbook-made-with" style="text-align: right; margin-top: 10px;">
+          <small>Powered by <a href="https://guestbooks.meadow.cafe" target="_blank">Guestbooks</a></small>
         </div>
-        <button type="submit">Sign Guestbook</button>
-        <div id="guestbooks___error-message"></div>
-      </form>
-    </div>
-    <!-- Attribution (optional but appreciated!) -->
-    <div id="guestbooks___guestbook-made-with" style="text-align: right; margin-top: 10px;">
-      <small>Powered by <a href="https://guestbooks.meadow.cafe" target="_blank">Guestbooks</a></small>
-    </div>
-    <!-- Messages Section -->
-    <hr style="margin: 2em 0;"/>
-    <h3 id="guestbooks___guestbook-messages-header">Messages</h3>
-    <div id="guestbooks___guestbook-messages-container"></div>
+        <!-- Messages Section -->
+        <hr style="margin: 2em 0;"/>
+        <h3 id="guestbooks___guestbook-messages-header">Messages</h3>
+        <div id="guestbooks___guestbook-messages-container"></div>
 
-
-    <link rel="stylesheet" href="style.css">
+    </div>
 </body>
 </html>
