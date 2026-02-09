@@ -205,3 +205,20 @@ button:hover {
     font-family: 'VT323';
     font-size: 22px;
 }
+
+.visitor-svg {
+    height: 1.2em; /* Matches your line height */
+    vertical-align: middle;
+    
+    /* This specific filter turns the SVG text into #4AF262 green */
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    
+    /* Ensures the vector text stays sharp and pixelated-friendly */
+    shape-rendering: crispEdges;
+}
+
+.terminal-stats {
+    font-family: 'VT323', monospace;
+    color: #4AF262;
+    font-size: 22px;
+}

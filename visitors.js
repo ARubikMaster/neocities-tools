@@ -14,7 +14,7 @@ function loadVisitorCount() {
         })
         .catch(err => {
             console.error('Counter Error:', err);
-            countEl.innerText = "ACCESS_DENIED"; 
+            countEl.innerText = "ACCESS_DENIED: TRY TURNING OFF YOUR ADBLOCKER!"; 
             countEl.style.color = "red"; // Optional: show error in red
         });
 }
