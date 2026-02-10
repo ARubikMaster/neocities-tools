@@ -2,22 +2,28 @@ function loadVisitorCount() {
     const countEl = document.getElementById('stats-count');
     if (!countEl) return;
 
-    // Replace 'epiccooldog' with your actual GoatCounter username
-    fetch('https://epiccooldog.goatcounter.com/counter/TOTAL.json')
+    // Cache-Busting: Append a unique timestamp (?t=...) to the URL
+    // This tells the browser: "Do not use the old version of this data"
+    const cacheBuster = new Date().getTime();
+    const apiUrl = `https://epiccooldog.goatcounter.com/counter/TOTAL.json?t=${cacheBuster}`;
+
+    fetch(apiUrl)
         .then(response => {
-            if (!response.ok) throw new Error('CSP or Blocked');
+            if (!response.ok) throw new Error('CSP_OR_BLOCKED');
             return response.json();
         })
         .then(data => {
-            // padStart(6, '0') makes it look like 000042
+            // Success: Format number with leading zeros (e.g., 000042)
             countEl.innerText = data.count.toString().padStart(6, '0');
+            countEl.style.color = ""; // Reset to original terminal green
         })
         .catch(err => {
             console.error('Counter Error:', err);
-            countEl.innerText = "ACCESS_DENIED: TRY TURNING OFF YOUR ADBLOCKER!"; 
-            countEl.style.color = "red"; // Optional: show error in red
+            // Retro terminal error style
+            countEl.innerText = "ACCESS_DENIED: CHECK_ADBLOCKER"; 
+            countEl.style.color = "red";
         });
 }
 
-// Run when the page is ready
+// Ensure it runs once the window is ready
 window.addEventListener('load', loadVisitorCount);
