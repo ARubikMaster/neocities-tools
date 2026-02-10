@@ -3,14 +3,14 @@ function loadVisitorCount() {
     if (!countEl) return;
 
     // Replace 'epiccooldog' with your actual GoatCounter username
-    fetch('https://api.cors.lol/?url=neocities.org/api/info?sitename=epiccooldog')
+    fetch('https://corsproxy.io/?url=https://neocities.org/api/info?sitename=epiccooldog')
         .then(response => {
             if (!response.ok) throw new Error('CSP or Blocked');
             return response.json();
         })
         .then(data => {
             // padStart(6, '0') makes it look like 000042
-            countEl.innerText = data.views.toString().padStart(6, '0');
+            countEl.innerText = data.info.views.toString().padStart(6, '0');
         })
         .catch(err => {
             console.error('Counter Error:', err);
